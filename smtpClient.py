@@ -30,7 +30,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     # Send MAIL FROM command and handle server response.
     # Fill in start
 
-    mailFrom = 'MAIL FROM : <SMIT.ALMIGHTY@GMAIL.COM>\r\n'
+    mailFrom = 'MAIL FROM: <SMIT.ALMIGHTY@GMAIL.COM>\r\n'
     clientSocket.send(mailFrom.encode())
     recv2 = clientSocket.recv(1024).decode()
 
@@ -75,7 +75,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     quit_command = 'QUIT\r\n'
     clientSocket.send(quit_command)
     recv6 = clientSocket.recv(1024).decode()
-
+    clientSocket.close()
     # Fill in end
 
 
